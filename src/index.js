@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react'
 import ReactDOM from 'react-dom'
 import {
-    NavLink,
     Link,
     BrowserRouter as Router,
     Route,
@@ -12,7 +11,7 @@ import Client from 'aws-appsync';
 import config from './appsync'
 // import 'bootstrap/dist/css/bootstrap.css';
 import { Rehydrated } from 'aws-appsync-react';
-import ApolloClient from 'apollo-boost'
+
 
 
 
@@ -22,7 +21,7 @@ import Home from './components/Home'
 import 'tachyons'
 import './index.css'
 
-const uri = ""
+
 const client = new Client({
     url: config.graphqlEndpoint,
     region: config.region,
