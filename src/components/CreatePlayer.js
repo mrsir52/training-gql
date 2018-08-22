@@ -2,12 +2,16 @@ import React, {Component} from 'react';
 import {graphql} from 'react-apollo';
 import MutatePlayer from '../Mutations/MutatePlayer'
 import { Card, CardBody, Input, Button} from 'mdbreact'
-import ListPlayers from '../queries/ListPlayers'
-import "../Profile/style.css"
+import ListPlayers from '../Queries/ListPlayers'
 import uuidV4 from 'uuid'
 
 
 class CreatePlayer extends Component {
+
+
+    componentDidMount() {
+
+}
 
     state = {
         firstName: '',
@@ -35,7 +39,7 @@ class CreatePlayer extends Component {
     }
 
     render() {
-
+    console.log("look here:", this.state)
 
         return (
             <div className="container">
@@ -59,7 +63,7 @@ class CreatePlayer extends Component {
                                         id: uuidV4()
                                     },
                                     refetchQueries: [{ query: ListPlayers }]
-                                }).then( () => window.location.replace('/Admin'))
+                                }).then( () => window.location.replace('/'))
 
                                 // alert('Player Created')
                                 // window.location.replace('/Teamdata')
@@ -70,42 +74,36 @@ class CreatePlayer extends Component {
                                     <CardBody>
                                         <Input
                                             type="text"
-                                            name="firstName"
                                             label="First Name"
                                             value={this.state.firstName}
                                             onChange={e => this.setState({firstName: e.target.value})}
                                         />
                                         <Input
                                             type="text"
-                                            name="lastName"
                                             label="Last Name"
                                             value={this.state.lastName}
                                             onChange={e => this.setState({lastName: e.target.value})}
                                         />
                                         <Input
                                             type="text"
-                                            name="position"
                                             label="Position"
                                             value={this.state.position}
                                             onChange={e => this.setState({position: e.target.value})}
                                         />
                                         <Input
                                             type="text"
-                                            name="gradClass"
                                             label="Class Of"
                                             value={this.state.gradClass}
                                             onChange={e => this.setState({gradClass: e.target.value})}
                                         />
                                         <Input
                                             type="number"
-                                            name="maxBench"
                                             label="Max Bench"
                                             value={this.state.maxBench}
                                             onChange={e => this.setState({maxBench: e.target.value})}
                                         />
                                         <Input
                                             type="number"
-                                            name="maxSquat"
                                             label="Max Squat"
                                             value={this.state.maxSquat}
                                             onChange={e => this.setState({maxSquat: e.target.value})}

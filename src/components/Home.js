@@ -15,7 +15,6 @@ class Home extends Component {
                 <h1>
                     from home
                 </h1>
-
                     {this.state.players.map((player, index) => (
                             <tr key={player.id}>
                                 <td>{player.firstName}</td>
@@ -28,11 +27,7 @@ class Home extends Component {
                         )
                     )
                     }
-
-
             </Fragment>
-
-
         )
     }
 }
